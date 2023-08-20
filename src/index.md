@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Golang Documentation"
   text: "Golang Documentation Collection"
-  tagline: My great project tagline
+  tagline: Build your golang project
   actions:
     - theme: brand
       text: Markdown Examples
