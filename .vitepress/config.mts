@@ -2,25 +2,47 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Golang Documentation',
-  description: 'Golang Documentation Collection',
   base: '/golang-docs/',
   cleanUrls: true,
-  srcDir: './src',
+  lang: 'en-US',
+  lastUpdated: true,
+  srcDir: 'src',
 
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    // fr: {
+    //   label: 'French',
+    //   lang: 'fr', // optional, will be added  as `lang` attribute on `html` tag
+    // }
+  },
+  
+  title: 'Golang Documentation',
+  description: 'Golang Documentation Collection',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples Markdown 1', link: '/markdown-examples' }
+      { text: 'Introduction', link: '/introduction/' }
     ],
+
+    search: {
+      provider: 'local',
+    },
+
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2023-Present Fadli Al Baihaqi'
+    },
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Introduction',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Introduction', link: '/introduction/' },
+          { text: 'Getting Started', link: '/introduction/getting-started' }
         ]
       }
     ],
