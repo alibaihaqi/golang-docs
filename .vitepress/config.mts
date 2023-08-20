@@ -5,7 +5,9 @@ export default defineConfig({
   title: 'Golang Documentation',
   description: 'Golang Documentation Collection',
   base: '/golang-docs/',
+  cleanUrls: true,
   srcDir: './src',
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
