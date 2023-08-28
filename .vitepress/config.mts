@@ -44,6 +44,22 @@ export default defineConfig({
           { text: 'Introduction', link: '/introduction/' },
           { text: 'Getting Started', link: '/introduction/getting-started' }
         ]
+      },
+      {
+        text: 'Basic Knowledge',
+        collapsed: true,
+        items: [
+          { text: 'General Info', link: '/basic/' },
+          { text: 'Variables', link: '/basic/variables' }
+        ]
+      },
+      {
+        text: 'Router',
+        collapsed: true,
+        items: [
+          { text: 'General Info', link: '/router/' },
+          { text: 'JSON Encoding', link: '/router/json-encoding' }
+        ]
       }
     ],
 
