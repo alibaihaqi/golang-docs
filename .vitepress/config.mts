@@ -58,7 +58,8 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'General Info', link: '/router/' },
-          { text: 'JSON Encoding', link: '/router/json-encoding' }
+          { text: 'JSON & XML Encoding', link: '/router/json-xml-encoding' },
+          { text: 'Mux Implementation', link: '/router/mux-implementation' },
         ]
       }
     ],

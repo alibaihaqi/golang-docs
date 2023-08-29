@@ -4,6 +4,8 @@ Basically, to generate simple REST API for golang is quite easy. You can use bui
 1. HandleFunc: it used to register the API pattern, handle the API request and response
 2. ListenAndServe: the purpose is very straightforward where we want to run the application on specific "port" in our local or production.
 
+## Code Implementation
+
 ```go
 package main
 
@@ -37,5 +39,10 @@ func main() {
 func simpleApi(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "API response!")
 }
+```
 
+## API Response
+We'll get a plain text response from this API
+```json
+API Response
 ```
