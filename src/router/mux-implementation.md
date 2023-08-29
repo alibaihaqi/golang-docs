@@ -40,13 +40,15 @@ func Start() {
 	mux := mux.NewRouter()
 
 	// Define Routes
-	mux.HandleFunc("/api-json", handlers.SimpleJsonApi)
+	mux.HandleFunc("/simple-api", handlers.SimpleApi).Methods(http.MethodGet) // To specify method you expect to be open
+	mux.HandleFunc("/api-with-param/{param_id:[a-z]+}", handlers.ApiWithParam).Methods(http.MethodGet)
 
 	// Start the server
 	if err := http.ListenAndServe(":8080", mux); err != nil {
 		log.Fatalf("Error when listen and serve: %s", err.Error())
 	}
 }
+
 ```
 :::
 
@@ -62,18 +64,32 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
+	"github.com/gorilla/mux"
 	"net/http"
 )
 
 type CommonResponse struct {
 	Success bool   `json:"success" xml:"success"`
 	Message string `json:"message" xml:"message"`
+	ParamId string `json:"paramId,omitempty" xml:"paramId,omitempty"`
 }
 
-func SimpleJsonApi(w http.ResponseWriter, r *http.Request) {
+func SimpleApi(w http.ResponseWriter, r *http.Request) {
 	resp := CommonResponse{
 		Success: true,
 		Message: "API Response",
+	}
+
+	GenerateResponse(w, r, resp)
+}
+
+func ApiWithParam(w http.ResponseWriter, r *http.Request) {
+	// Mux will handle the parameter sent through http request
+	vars := mux.Vars(r)
+	resp := CommonResponse{
+		Success: true,
+		Message: "API Response",
+		ParamId: vars["param_id"], // Get the property based on parameter sent from the client
 	}
 
 	GenerateResponse(w, r, resp)
@@ -90,6 +106,5 @@ func GenerateResponse(w http.ResponseWriter, r *http.Request, i interface{}) {
 		fmt.Fprintf(w, fmt.Sprintf("%s", i))
 	}
 }
-
 ```
 :::
