@@ -24,8 +24,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Introduction', link: '/introduction/' }
+      { text: 'Introduction', link: '/introduction/' },
+      { text: 'Basic', link: '/basic/' }
     ],
 
     search: {
