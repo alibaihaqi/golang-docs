@@ -24,7 +24,6 @@ func main() {
 
 The app responsibility is to main routers for the application
 
-:::details app.go
 ```go
 package app
 
@@ -50,13 +49,11 @@ func Start() {
 }
 
 ```
-:::
 
 ## Handler Files
 
 The handler files responsibility is to handle logic operations until we return the response to the client
 
-:::details handler.go
 ```go
 package handlers
 
@@ -107,4 +104,3 @@ func GenerateResponse(w http.ResponseWriter, r *http.Request, i interface{}) {
 	}
 }
 ```
-:::

@@ -47,15 +47,16 @@ export default defineConfig({
       },
       {
         text: 'Basic Knowledge',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'General Info', link: '/basic/' },
-          { text: 'Variables', link: '/basic/variables' }
+          { text: 'Variables', link: '/basic/variables' },
+          { text: 'Looping', link: '/basic/looping' },
         ]
       },
       {
         text: 'Router',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'General Info', link: '/router/' },
           { text: 'JSON & XML Encoding', link: '/router/json-xml-encoding' },
