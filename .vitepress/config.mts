@@ -21,6 +21,11 @@ export default defineConfig({
   
   title: 'Golang Documentation',
   description: 'Golang Documentation Collection',
+
+  head: [
+    ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
+  ],
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
