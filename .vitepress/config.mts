@@ -50,6 +50,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'General Info', link: '/basic/' },
+          { text: 'Types', link: '/basic/types' },
           { text: 'Variables', link: '/basic/variables' },
           { text: 'Looping', link: '/basic/looping' },
         ]
