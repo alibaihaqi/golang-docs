@@ -23,7 +23,7 @@ export default defineConfig({
   description: 'Golang Documentation Collection',
 
   head: [
-    ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
+    ['link', { rel: 'icon', href: 'https://www.alibaihaqi.com/favicon.ico' }]
   ],
 
   themeConfig: {
