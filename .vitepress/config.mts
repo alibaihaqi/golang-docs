@@ -38,7 +38,7 @@ export default defineConfig({
     },
 
     footer: {
-      copyright: 'Copyright © 2023 - Present Fadli Al Baihaqi'
+      copyright: 'Copyright © 2023 - Present by Fadli Al Baihaqi'
     },
 
     sidebar: [
