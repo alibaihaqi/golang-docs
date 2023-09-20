@@ -1,2 +1,4 @@
-# golang-docs
-documentation for develop golang
+# Golang Documentation
+
+Personal Website: [HERE](https://www.alibaihaqi.com)
+Description: Documentation for Golang Development
