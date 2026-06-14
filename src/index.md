@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Golang Documentation"
-  tagline: Develop your Golang project
+  tagline: Part of the Learning Docs hub.
   actions:
     - theme: brand
       text: Introduction
@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: Getting Started
       link: /introduction/getting-started
+    - theme: alt
+      text: Hub
+      link: https://alibaihaqi.github.io/learning-docs/
 
 features:
   - title: Basic Knowledge
