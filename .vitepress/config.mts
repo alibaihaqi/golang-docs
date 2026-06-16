@@ -30,7 +30,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Introduction', link: '/introduction/' },
-      { text: 'Basic', link: '/basic/' }
+      { text: 'Beginner', link: '/beginner/' }
     ],
 
     search: {
@@ -50,22 +50,20 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Basic Knowledge',
+        text: 'Beginner',
         collapsed: false,
         items: [
-          { text: 'General Info', link: '/basic/' },
-          { text: 'Types', link: '/basic/types' },
-          { text: 'Variables', link: '/basic/variables' },
-          { text: 'Looping', link: '/basic/looping' },
-        ]
-      },
-      {
-        text: 'Router',
-        collapsed: false,
-        items: [
-          { text: 'General Info', link: '/router/' },
-          { text: 'JSON & XML Encoding', link: '/router/json-xml-encoding' },
-          { text: 'Mux Implementation', link: '/router/mux-implementation' },
+          { text: 'Overview', link: '/beginner/' },
+          { text: '01 Install Go', link: '/beginner/01-install-go' },
+          { text: '02 Hello world', link: '/beginner/02-hello-world' },
+          { text: '03 Types and variables', link: '/beginner/03-types-and-variables' },
+          { text: '04 Control flow', link: '/beginner/04-control-flow' },
+          { text: '05 Functions', link: '/beginner/05-functions' },
+          { text: '06 Structs', link: '/beginner/06-structs' },
+          { text: '07 Slices', link: '/beginner/07-slices' },
+          { text: '08 Hello HTTP', link: '/beginner/08-hello-http' },
+          { text: '09 JSON encoding', link: '/beginner/09-json-encoding' },
+          { text: '10 Serving JSON', link: '/beginner/10-serving-json' },
         ]
       }
     ],

@@ -17,12 +17,9 @@ hero:
       link: https://alibaihaqi.github.io/learning-docs/
 
 features:
-  - title: Basic Knowledge
-    details: Understanding basic knowledge Golang
-    link: /basic/
-  - title: Router
-    details: Basic Router Implementation
-    link: /router/
+  - title: Beginner tier
+    details: Ladder from zero to a curl-able JSON endpoint built on net/http.
+    link: /beginner/
 #   - title: Feature C
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
