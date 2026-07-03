@@ -20,8 +20,9 @@ features:
   - title: Beginner tier
     details: Ladder from zero to a curl-able JSON endpoint built on net/http.
     link: /beginner/
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Intermediate tier
+    details: Extend the beginner endpoint into a CRUD /items API backed by SQLite — store layer, config, and table-driven tests. Pure Go, no cgo.
+    link: /intermediate/
 ---
 
 <style>
