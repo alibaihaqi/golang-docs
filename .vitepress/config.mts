@@ -30,7 +30,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Introduction', link: '/introduction/' },
-      { text: 'Beginner', link: '/beginner/' }
+      { text: 'Beginner', link: '/beginner/' },
+      { text: 'Intermediate', link: '/intermediate/' }
     ],
 
     search: {
@@ -64,6 +65,21 @@ export default defineConfig({
           { text: '08 Hello HTTP', link: '/beginner/08-hello-http' },
           { text: '09 JSON encoding', link: '/beginner/09-json-encoding' },
           { text: '10 Serving JSON', link: '/beginner/10-serving-json' },
+        ]
+      },
+      {
+        text: 'Intermediate',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/intermediate/' },
+          { text: '01 Why persistence', link: '/intermediate/01-why-persistence' },
+          { text: '02 Project setup', link: '/intermediate/02-project-setup' },
+          { text: '03 Schema', link: '/intermediate/03-schema' },
+          { text: '04 Store layer', link: '/intermediate/04-store-layer' },
+          { text: '05 List and get handlers', link: '/intermediate/05-list-get-handlers' },
+          { text: '06 Create handler', link: '/intermediate/06-create-handler' },
+          { text: '07 Config', link: '/intermediate/07-config' },
+          { text: '08 Tests', link: '/intermediate/08-tests' },
         ]
       }
     ],
