@@ -3,6 +3,9 @@
 > Public VitePress documentation site published to GitHub Pages. Part of the
 > learning-docs hub.
 
+> **Read [`CHANGELOG.md`](./CHANGELOG.md) first** — it summarizes what has been
+> added over time (tiers, CI changes) so you have context before reading the code.
+
 ## Content model
 - Content lives in `src/`. Tiers: `introduction`, `beginner`, `intermediate`.
 - Each tier is a numbered ladder building ONE concrete artifact.
