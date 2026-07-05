@@ -3,6 +3,11 @@
 All notable changes to the Golang learning-docs site. Newest first.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-07-05 — Advanced tier
+
+### Added
+- **Advanced tier** (`src/advanced/`, 10 pages + index): upgrades the SQLite CRUD API to a production-ready REST service — PostgreSQL (pgx/pgxpool), JWT auth (`golang-jwt/v5`), HTTP middleware (logging, request ID, recovery, rate limiting), Docker multistage build + docker-compose, Testcontainers integration tests, pprof benchmarks, graceful shutdown, and CI/CD GitHub Actions. Wired into the sidebar, nav, and home feature card.
+
 ## 2026-07-04 — Intermediate tier + CI
 
 ### Added

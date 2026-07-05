@@ -23,6 +23,9 @@ features:
   - title: Intermediate tier
     details: Extend the beginner endpoint into a CRUD /items API backed by SQLite — store layer, config, and table-driven tests. Pure Go, no cgo.
     link: /intermediate/
+  - title: Advanced tier
+    details: Production-ready REST API — PostgreSQL, JWT auth, middleware, Docker, integration tests, benchmarks, graceful shutdown, and CI/CD.
+    link: /advanced/
 ---
 
 <style>

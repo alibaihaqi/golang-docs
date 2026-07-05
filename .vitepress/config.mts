@@ -31,7 +31,8 @@ export default defineConfig({
     nav: [
       { text: 'Introduction', link: '/introduction/' },
       { text: 'Beginner', link: '/beginner/' },
-      { text: 'Intermediate', link: '/intermediate/' }
+      { text: 'Intermediate', link: '/intermediate/' },
+      { text: 'Advanced', link: '/advanced/' }
     ],
 
     search: {
@@ -80,6 +81,23 @@ export default defineConfig({
           { text: '06 Create handler', link: '/intermediate/06-create-handler' },
           { text: '07 Config', link: '/intermediate/07-config' },
           { text: '08 Tests', link: '/intermediate/08-tests' },
+        ]
+      },
+      {
+        text: 'Advanced',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/advanced/' },
+          { text: '01 Why PostgreSQL', link: '/advanced/01-why-postgresql' },
+          { text: '02 Migrate to PostgreSQL', link: '/advanced/02-migrate-to-postgresql' },
+          { text: '03 HTTP middleware', link: '/advanced/03-http-middleware' },
+          { text: '04 JWT auth middleware', link: '/advanced/04-jwt-auth-middleware' },
+          { text: '05 Rate limiting', link: '/advanced/05-rate-limiting' },
+          { text: '06 Docker multistage', link: '/advanced/06-docker-multistage' },
+          { text: '07 Integration tests', link: '/advanced/07-integration-tests' },
+          { text: '08 Benchmarks and profiling', link: '/advanced/08-benchmarks-and-profiling' },
+          { text: '09 Graceful shutdown', link: '/advanced/09-graceful-shutdown' },
+          { text: '10 CI/CD GitHub Actions', link: '/advanced/10-ci-cd-github-actions' },
         ]
       }
     ],
