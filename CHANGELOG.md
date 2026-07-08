@@ -3,6 +3,12 @@
 All notable changes to the Golang learning-docs site. Newest first.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-07-07 — feat: add Go Language deep-dive section
+
+### Added
+- **Go Language section** (`src/go-language/`, 14 pages + index): comprehensive language tour — design philosophy, types/constants, control flow/functions, structs/methods, interfaces, generics, error handling, packages/modules, goroutines/channels, sync primitives/Context, standard library, testing/benchmarking, reflection/code generation, CGO interop.
+- Wired into sidebar (after Advanced), nav, and home feature card.
+
 ## 2026-07-05 — Advanced tier
 
 ### Added

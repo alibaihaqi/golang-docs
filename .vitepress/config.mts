@@ -32,7 +32,8 @@ export default defineConfig({
       { text: 'Introduction', link: '/introduction/' },
       { text: 'Beginner', link: '/beginner/' },
       { text: 'Intermediate', link: '/intermediate/' },
-      { text: 'Advanced', link: '/advanced/' }
+      { text: 'Advanced', link: '/advanced/' },
+      { text: 'Go', link: '/go-language/' }
     ],
 
     search: {
@@ -98,6 +99,27 @@ export default defineConfig({
           { text: '08 Benchmarks and profiling', link: '/advanced/08-benchmarks-and-profiling' },
           { text: '09 Graceful shutdown', link: '/advanced/09-graceful-shutdown' },
           { text: '10 CI/CD GitHub Actions', link: '/advanced/10-ci-cd-github-actions' },
+        ]
+      },
+      {
+        text: 'Go Language',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/go-language/' },
+          { text: '01 Why Go', link: '/go-language/01-why-go' },
+          { text: '02 Types and constants', link: '/go-language/02-types-and-constants' },
+          { text: '03 Control flow and functions', link: '/go-language/03-control-flow-and-functions' },
+          { text: '04 Structs and methods', link: '/go-language/04-structs-and-methods' },
+          { text: '05 Interfaces', link: '/go-language/05-interfaces' },
+          { text: '06 Generics', link: '/go-language/06-generics' },
+          { text: '07 Error handling', link: '/go-language/07-error-handling' },
+          { text: '08 Packages and modules', link: '/go-language/08-packages-and-modules' },
+          { text: '09 Goroutines and channels', link: '/go-language/09-goroutines-and-channels' },
+          { text: '10 Sync primitives and Context', link: '/go-language/10-sync-primitives-and-context' },
+          { text: '11 Standard library tour', link: '/go-language/11-standard-library-tour' },
+          { text: '12 Testing and benchmarking', link: '/go-language/12-testing-and-benchmarking' },
+          { text: '13 Reflection and code generation', link: '/go-language/13-reflection-and-code-generation' },
+          { text: '14 CGO and interop', link: '/go-language/14-cgo-and-interop' },
         ]
       }
     ],
