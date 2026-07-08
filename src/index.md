@@ -26,6 +26,9 @@ features:
   - title: Advanced tier
     details: Production-ready REST API — PostgreSQL, JWT auth, middleware, Docker, integration tests, benchmarks, graceful shutdown, and CI/CD.
     link: /advanced/
+  - title: Go Language
+    details: From zero values to CGO interop — a complete tour of the Go programming language.
+    link: /go-language/
 ---
 
 <style>
