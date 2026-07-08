@@ -47,7 +47,7 @@ var c1 complex64   // real + imag float32
 var c2 complex128  // real + imag float64
 ```
 
-The \`int\` and \`uint\` types are platform-dependent — 32 bits on 32-bit architectures, 64 bits on 64-bit architectures. \`uintptr\` is an unsigned integer type large enough to hold any pointer value; it is used primarily in unsafe memory operations and syscall interfaces. Use specific-width types when serialising wire formats or controlling memory layout.
+The `int` and `uint` types are platform-dependent — 32 bits on 32-bit architectures, 64 bits on 64-bit architectures. `uintptr` is an unsigned integer type large enough to hold any pointer value; it is used primarily in unsafe memory operations and syscall interfaces. Use specific-width types when serialising wire formats or controlling memory layout.
 
 ### Strings
 

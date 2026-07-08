@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/golang-docs/',
   cleanUrls: true,
-  ignoreDeadLinks: true,
   lang: 'en-US',
   lastUpdated: true,
   srcDir: 'src',

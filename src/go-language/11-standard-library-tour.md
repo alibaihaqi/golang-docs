@@ -405,7 +405,7 @@ go list std | grep encoding
 
 ## Links to existing tiers
 
-The [Advanced tier CI/CD page](../advanced/10-ci-cd.md) uses `os/exec` to run build commands and `flag` for configuration. The [Beginner tier](../beginner/) uses `net/http` for its API server, `encoding/json` for response encoding, and `os.ReadFile`/`os.WriteFile` for file persistence. The Intermediate tier's graceful shutdown pattern uses `signal.NotifyContext`.
+The [Advanced tier CI/CD page](../advanced/10-ci-cd-github-actions.md) uses `os/exec` to run build commands and `flag` for configuration. The [Beginner tier](../beginner/) uses `net/http` for its API server, `encoding/json` for response encoding, and `os.ReadFile`/`os.WriteFile` for file persistence. The Intermediate tier's graceful shutdown pattern uses `signal.NotifyContext`.
 
 ---
 

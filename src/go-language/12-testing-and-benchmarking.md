@@ -374,7 +374,7 @@ Runs dozens of linters in parallel with configurable rulesets. Standard in most 
 
 ## Links to existing tiers
 
-The [Intermediate tier's SQLite handler](../intermediate/06-sqlite.md) uses table-driven tests for the HTTP handlers. The Advanced tier's rate limiter test uses parallel subtests. The CI/CD page demonstrates running `go test -cover` in a GitHub Actions pipeline.
+The [Intermediate tier's SQLite handler](../intermediate/06-create-handler.md) uses table-driven tests for the HTTP handlers. The Advanced tier's rate limiter test uses parallel subtests. The CI/CD page demonstrates running `go test -cover` in a GitHub Actions pipeline.
 
 ---
 

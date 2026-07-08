@@ -24,7 +24,7 @@ Every feature that made it into the language survived years of scrutiny; feature
 
 ### Simplicity — only 25 keywords
 
-Go has just 25 keywords. For comparison, C has 32, Java has over 50, and C++ has more than 80. This is not an accident — every keyword in Go earns its place. There is no \`while\` (use \`for\`), no \`class\` (use \`struct\`), no \`try\`/\`catch\` (use error values). The language designers deliberately omitted features that add complexity without proportional benefit — generics arrived in 1.18 only after a decade of design iteration, and features like inheritance, operator overloading, and exceptions remain absent.
+Go has just 25 keywords. For comparison, C has 32, Java has over 50, and C++ has more than 80. This is not an accident — every keyword in Go earns its place. There is no `while` (use `for`), no `class` (use `struct`), no `try`/`catch` (use error values). The language designers deliberately omitted features that add complexity without proportional benefit — generics arrived in 1.18 only after a decade of design iteration, and features like inheritance, operator overloading, and exceptions remain absent.
 
 ```go
 // All 25 Go keywords
@@ -39,7 +39,7 @@ This small surface makes Go easy to learn and — crucially — easy to read. A 
 
 ### Composability — interfaces, not inheritance
 
-Go uses implicit interface satisfaction rather than class hierarchies. If a type implements the methods an interface requires, it satisfies that interface automatically — no \`implements\` keyword needed. This encourages composing small behaviours rather than building deep type trees. Interfaces in Go are typically small — one or two methods — following the principle that the bigger the interface, the weaker the abstraction. The standard library's \`io.Reader\` and \`io.Writer\` are canonical examples: they are satisfied by files, network connections, buffers, compressors, and encoders alike, without any of those types declaring their relationship.
+Go uses implicit interface satisfaction rather than class hierarchies. If a type implements the methods an interface requires, it satisfies that interface automatically — no `implements` keyword needed. This encourages composing small behaviours rather than building deep type trees. Interfaces in Go are typically small — one or two methods — following the principle that the bigger the interface, the weaker the abstraction. The standard library's `io.Reader` and `io.Writer` are canonical examples: they are satisfied by files, network connections, buffers, compressors, and encoders alike, without any of those types declaring their relationship.
 
 ```go
 type Reader interface {
@@ -76,7 +76,7 @@ Go dominates certain categories of software. These are the areas where it is the
 
 ### CLI tools
 
-Docker and Kubernetes are both written in Go. So are Hugo, Caddy, Terraform, Vault, Consul, and hundreds of other CLI tools. Go produces a single static binary — no runtime dependency, no VM, no JIT. Drop it on any Linux machine and it runs. Cross-compilation is a one-liner: \`GOOS=linux GOARCH=arm64 go build\` produces a binary for a different platform from your development machine.
+Docker and Kubernetes are both written in Go. So are Hugo, Caddy, Terraform, Vault, Consul, and hundreds of other CLI tools. Go produces a single static binary — no runtime dependency, no VM, no JIT. Drop it on any Linux machine and it runs. Cross-compilation is a one-liner: `GOOS=linux GOARCH=arm64 go build` produces a binary for a different platform from your development machine.
 
 ```go
 package main
@@ -98,7 +98,7 @@ Build with `go build -o hello .` and you get a self-contained binary. On Linux, 
 
 ### API servers
 
-Go's standard library includes a production-grade HTTP server, a JSON encoder/decoder, TLS support, and a router. You can build a working API server without any third-party dependency — the standard library is the framework. The \`http.Handler\` interface is the abstraction: any type with a \`ServeHTTP\` method can serve requests, and middleware is just a handler that wraps another handler.
+Go's standard library includes a production-grade HTTP server, a JSON encoder/decoder, TLS support, and a router. You can build a working API server without any third-party dependency — the standard library is the framework. The `http.Handler` interface is the abstraction: any type with a `ServeHTTP` method can serve requests, and middleware is just a handler that wraps another handler.
 
 ```go
 package main
@@ -175,7 +175,7 @@ For most server applications, Go's GC pauses are measured in microseconds and do
 
 C requires manual memory management, header files, a preprocessor, and careful pointer arithmetic. Go abstracts all of these while keeping C-like performance for most workloads.
 
-Standard library data structures (slices, maps, strings) handle memory management internally. The \`defer\` keyword replaces cleanup labels. Interfaces replace void-pointer polymorphism.
+Standard library data structures (slices, maps, strings) handle memory management internally. The `defer` keyword replaces cleanup labels. Interfaces replace void-pointer polymorphism.
 
 The result is a language that performs within 2-3x of C for most server workloads while eliminating entire categories of memory bugs. A Go developer can be productive in the language within weeks; achieving the same proficiency in C takes years.
 
@@ -196,7 +196,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o app
 
 Concurrency is part of the language, not an add-on library. Goroutines are lightweight — their stack starts at ~4 KB and grows as needed, supporting millions of concurrent goroutines in a single process.
 
-The runtime scheduler handles M:N mapping automatically. You write sequential logic inside each goroutine while the runtime distributes them across available CPU cores. Channels provide typed, safe communication between goroutines, and the \`select\` statement coordinates multiple channel operations.
+The runtime scheduler handles M:N mapping automatically. You write sequential logic inside each goroutine while the runtime distributes them across available CPU cores. Channels provide typed, safe communication between goroutines, and the `select` statement coordinates multiple channel operations.
 
 ```go
 go func() {
@@ -208,15 +208,9 @@ go func() {
 
 Go's standard library covers HTTP, JSON, TLS, compression, cryptography, templating, testing, profiling, and more. Many services never need third-party code.
 
-The \`net/http\` package includes a production-grade HTTP server and client. \`encoding/json\` handles marshalling and unmarshalling without external libraries. The \`testing\` package provides benchmarks, table-driven tests, and coverage built in.
+The `net/http` package includes a production-grade HTTP server and client. `encoding/json` handles marshalling and unmarshalling without external libraries. The `testing` package provides benchmarks, table-driven tests, and coverage built in.
 
 This design philosophy — shipping a complete platform in the standard library — is why Go projects have fewer dependencies than equivalent Node, Python, or Java projects.
-
-### gofmt as community standard
-
-Go ships with \`gofmt\` (now \`go fmt\`), which canonicalises every source file into the same format. Tab-based indentation, no alignment debates, no formatting arguments in code review. The community standard is not a style guide — it is a tool that runs automatically.
-
-VS Code runs \`gofmt\` on save by default; GoLand, vim, and emacs all do the same. A Go codebase from 2012 and one from 2026 are indistinguishable by formatting convention. This consistency is one of Go's greatest social wins — every developer writes the same Go.
 
 ### Backward compatibility promise
 
@@ -230,13 +224,13 @@ You can upgrade the toolchain without touching source code, and you can vendor d
 
 Go ships with a testing framework in the standard library. No third-party test runner, no assertion library, no mocking framework required.
 
-The \`go test\` command discovers and runs tests, benchmarks, and examples from any package. Table-driven tests are the idiomatic pattern: you define a slice of test cases and iterate over them, keeping test logic and test data separate.
+The `go test` command discovers and runs tests, benchmarks, and examples from any package. Table-driven tests are the idiomatic pattern: you define a slice of test cases and iterate over them, keeping test logic and test data separate.
 
-Coverage is built in with \`go test -cover\`. Fuzzing was added in Go 1.18. Profiling — CPU, memory, goroutine, mutex — is a single flag away with \`go test -bench=. -cpuprofile=cpu.out\`.
+Coverage is built in with `go test -cover`. Fuzzing was added in Go 1.18. Profiling — CPU, memory, goroutine, mutex — is a single flag away with `go test -bench=. -cpuprofile=cpu.out`.
 
 ### Static analysis built in
 
-Go ships with \`go vet\`, a static analysis tool that detects suspicious constructs — unreachable code, incorrect Printf calls, lock misuse, and more. The community tool \`golangci-lint\` aggregates dozens of linters into a single binary.
+Go ships with `go vet`, a static analysis tool that detects suspicious constructs — unreachable code, incorrect Printf calls, lock misuse, and more. The community tool `golangci-lint` aggregates dozens of linters into a single binary.
 
 These tools catch logic errors before they reach production. Go's regular syntax makes static analysis reliable; unlike C++ or Python, the parser always produces an unambiguous AST because Go's grammar was designed for tooling first.
 

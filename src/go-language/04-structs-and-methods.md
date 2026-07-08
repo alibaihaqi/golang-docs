@@ -33,13 +33,13 @@ fmt.Println(u.Name) // "Alice"
 
 Every field in a struct defaults to its zero value when created without explicit initialisation. Structs are always safe to use — no field is ever undefined:
 
-\`\`\`go
+```go
 var u User
 fmt.Println(u) // {"", 0, ""}
 
 var cfg Config
 // cfg.Port is 0, cfg.Host is "", cfg.Verbose is false
-\`\`\`
+```
 
 ### Initialisation syntax
 
@@ -111,13 +111,13 @@ type Config struct {
 }
 ```
 
-The \`reflect.StructTag\` type provides a \`Get\` method for looking up keys at runtime:
+The `reflect.StructTag` type provides a `Get` method for looking up keys at runtime:
 
-\`\`\`go
+```go
 t := reflect.TypeOf(User{})
 field, _ := t.FieldByName("Name")
 tag := field.Tag.Get("json") // "name"
-\`\`\`
+```
 
 ## Value vs pointer receivers
 
@@ -203,7 +203,7 @@ This pattern is used extensively in the standard library (e.g., `(*http.Request)
 
 **General rule:** use a value receiver when the method does not mutate the receiver and the struct is small. Use a pointer receiver when the method modifies the receiver, the struct is large, or the receiver may be nil.
 
-**Consistency rule:** if any method on a type needs a pointer receiver, all methods on that type should use pointer receivers. Mixing value and pointer receivers creates different method sets on \`T\` and \`*T\`, which causes subtle bugs when the type is used through an interface.
+**Consistency rule:** if any method on a type needs a pointer receiver, all methods on that type should use pointer receivers. Mixing value and pointer receivers creates different method sets on `T` and `*T`, which causes subtle bugs when the type is used through an interface.
 
 ## Embedding (not inheritance)
 
@@ -247,7 +247,7 @@ fmt.Println(admin.User.Email)     // explicit access to embedded field
 
 Go does not have virtual dispatch — an embedding type cannot "override" a method of the embedded type. You can define a method with the same name, which **shadows** the embedded method rather than overriding it:
 
-\`\`\`go
+```go
 type Admin struct {
     User
     Permissions []string
@@ -256,9 +256,9 @@ type Admin struct {
 func (a Admin) FullName() string {
     return "Admin: " + a.User.FullName()
 }
-\`\`\`
+```
 
-The promoted \`User.FullName()\` is still accessible via \`admin.User.FullName()\`. The shadowing is resolved at compile time based on the receiver type, not through dynamic dispatch — embedding is composition, not inheritance.
+The promoted `User.FullName()` is still accessible via `admin.User.FullName()`. The shadowing is resolved at compile time based on the receiver type, not through dynamic dispatch — embedding is composition, not inheritance.
 
 ### Multiple embedding
 
@@ -320,7 +320,7 @@ fmt.Println(p1 == p2) // true
 fmt.Println(p1 == p3) // false
 ```
 
-Structs with slice, map, or function fields are not comparable and cause a compile error when using \`==\`.
+Structs with slice, map, or function fields are not comparable and cause a compile error when using `==`.
 
 ## Structs as method receivers
 

@@ -211,7 +211,7 @@ func readFile(path string) error {
 
 ### Arguments are evaluated immediately
 
-A deferred function's arguments are evaluated at the point of the \`defer\` statement, not when the deferred call executes.
+A deferred function's arguments are evaluated at the point of the `defer` statement, not when the deferred call executes.
 
 ```go
 func printCount() {
@@ -235,7 +235,7 @@ func printCount() {
 
 ### Common defer uses
 
-\`\`\`go
+```go
 // Unlocking mutex
 mu.Lock()
 defer mu.Unlock()
@@ -286,7 +286,7 @@ fmt.Println(fn(3)) // 6
 
 A closure is an anonymous function that captures variables from its surrounding scope.
 
-\`\`\`go
+```go
 // Closure
 counter := func() func() int {
     i := 0
@@ -347,7 +347,7 @@ nums := []int{1, 2, 3}
 fmt.Println(sum(nums...))    // 6
 ```
 
-The variadic parameter is a slice inside the function. You can have at most one variadic parameter, and it must be the last parameter. The standard library uses this pattern extensively — \`fmt.Printf\`, \`append\`, and the \`log\` package all take variadic arguments.
+The variadic parameter is a slice inside the function. You can have at most one variadic parameter, and it must be the last parameter. The standard library uses this pattern extensively — `fmt.Printf`, `append`, and the `log` package all take variadic arguments.
 
 ## Named returns
 
