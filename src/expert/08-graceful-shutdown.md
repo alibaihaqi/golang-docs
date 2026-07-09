@@ -192,11 +192,12 @@ import (
 )
 
 type OrderEvent struct {
-    ID        string  `json:"id"`
-    UserID    string  `json:"user_id"`
-    Amount    float64 `json:"amount"`
-    Email     string  `json:"email"`
-    Timestamp int64   `json:"timestamp"`
+    ID        string    `json:"id"`
+    UserID    string    `json:"user_id"`
+    Amount    float64   `json:"amount"`
+    Email     string    `json:"email"`
+    Items     []string  `json:"items"`
+    Timestamp time.Time `json:"timestamp"`
 }
 
 func main() {

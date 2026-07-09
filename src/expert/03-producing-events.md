@@ -27,6 +27,7 @@ type OrderEvent struct {
     ID        string    `json:"id"`
     UserID    string    `json:"user_id"`
     Amount    float64   `json:"amount"`
+    Email     string    `json:"email"`
     Items     []string  `json:"items"`
     Timestamp time.Time `json:"timestamp"`
 }
@@ -193,11 +194,11 @@ func main() {
 
     // 3. Produce sample events
     events := []OrderEvent{
-        {ID: "ord_001", UserID: "user_1", Amount: 29.99, Items: []string{"widget-a"}, Timestamp: time.Now()},
-        {ID: "ord_002", UserID: "user_1", Amount: 49.50, Items: []string{"widget-b", "widget-c"}, Timestamp: time.Now()},
-        {ID: "ord_003", UserID: "user_2", Amount: 9.99, Items: []string{"widget-d"}, Timestamp: time.Now()},
-        {ID: "ord_004", UserID: "user_3", Amount: 199.00, Items: []string{"widget-e", "widget-f", "widget-g"}, Timestamp: time.Now()},
-        {ID: "ord_005", UserID: "user_2", Amount: 14.99, Items: []string{"widget-h"}, Timestamp: time.Now()},
+        {ID: "ord_001", UserID: "user_1", Amount: 29.99, Email: "user@example.com", Items: []string{"widget-a"}, Timestamp: time.Now()},
+        {ID: "ord_002", UserID: "user_1", Amount: 49.50, Email: "user@example.com", Items: []string{"widget-b", "widget-c"}, Timestamp: time.Now()},
+        {ID: "ord_003", UserID: "user_2", Amount: 9.99, Email: "user@example.com", Items: []string{"widget-d"}, Timestamp: time.Now()},
+        {ID: "ord_004", UserID: "user_3", Amount: 199.00, Email: "user@example.com", Items: []string{"widget-e", "widget-f", "widget-g"}, Timestamp: time.Now()},
+        {ID: "ord_005", UserID: "user_2", Amount: 14.99, Email: "user@example.com", Items: []string{"widget-h"}, Timestamp: time.Now()},
     }
 
     for _, event := range events {
@@ -215,6 +216,7 @@ type OrderEvent struct {
     ID        string    `json:"id"`
     UserID    string    `json:"user_id"`
     Amount    float64   `json:"amount"`
+    Email     string    `json:"email"`
     Items     []string  `json:"items"`
     Timestamp time.Time `json:"timestamp"`
 }
