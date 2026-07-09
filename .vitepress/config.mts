@@ -4,9 +4,13 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/golang-docs/',
   cleanUrls: true,
+  ignoreDeadLinks: [
+    // localhost URLs for Jaeger and Prometheus UIs — only accessible when running docker-compose
+    'http://localhost:16686',
+    'http://localhost:9090'
+  ],
   lang: 'en-US',
   lastUpdated: true,
-  ignoreDeadLinks: true,
   srcDir: 'src',
 
   locales: {
