@@ -330,7 +330,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   otel-collector:
-    image: otel/opentelemetry-collectible-contrib:latest
+    image: otel/opentelemetry-collector-contrib:latest
     ports:
       - "4317:4317"
       - "8888:8888"
