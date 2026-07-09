@@ -3,6 +3,13 @@
 All notable changes to the Golang learning-docs site. Newest first.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-07-09 — feat: add Expert tier (Kafka + OpenTelemetry)
+
+### Added
+- **Expert tier** (`src/expert/`, 10 pages + index): build a Kafka event processor with full observability — why event-driven architecture, Kafka KRaft fundamentals, producing events with `segmentio/kafka-go`, consuming events with consumer groups, structured logging with `log/slog`, distributed tracing with OpenTelemetry (OTLP gRPC), Prometheus metrics (counters/histograms), graceful shutdown with signal handling, Docker Compose integration (Kafka + OTel Collector + Jaeger + Prometheus), and Testcontainers integration tests.
+- Wired into sidebar (after Go Language), nav, and home feature card.
+- Internal dead-link checking preserved for all localhost reference URLs.
+
 ## 2026-07-07 — feat: add Go Language deep-dive section
 
 ### Added

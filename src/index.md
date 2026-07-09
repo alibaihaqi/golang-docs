@@ -29,6 +29,9 @@ features:
   - title: Go Language
     details: From zero values to CGO interop — a complete tour of the Go programming language.
     link: /go-language/
+  - title: Expert tier
+    details: Build a Kafka event processor with OpenTelemetry observability — tracing, metrics, and structured logging in production Go.
+    link: /expert/
 ---
 
 <style>
