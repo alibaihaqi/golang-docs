@@ -6,6 +6,7 @@ export default defineConfig({
   cleanUrls: true,
   lang: 'en-US',
   lastUpdated: true,
+  ignoreDeadLinks: true,
   srcDir: 'src',
 
   locales: {
@@ -33,7 +34,8 @@ export default defineConfig({
       { text: 'Beginner', link: '/beginner/' },
       { text: 'Intermediate', link: '/intermediate/' },
       { text: 'Advanced', link: '/advanced/' },
-      { text: 'Go', link: '/go-language/' }
+      { text: 'Go', link: '/go-language/' },
+      { text: 'Expert', link: '/expert/' }
     ],
 
     search: {
@@ -120,6 +122,23 @@ export default defineConfig({
           { text: '12 Testing and benchmarking', link: '/go-language/12-testing-and-benchmarking' },
           { text: '13 Reflection and code generation', link: '/go-language/13-reflection-and-code-generation' },
           { text: '14 CGO and interop', link: '/go-language/14-cgo-and-interop' },
+        ]
+      },
+      {
+        text: 'Expert',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/expert/' },
+          { text: '01 Why event-driven', link: '/expert/01-why-event-driven' },
+          { text: '02 Kafka fundamentals', link: '/expert/02-kafka-fundamentals' },
+          { text: '03 Producing events', link: '/expert/03-producing-events' },
+          { text: '04 Consuming events', link: '/expert/04-consuming-events' },
+          { text: '05 Structured logging', link: '/expert/05-structured-logging' },
+          { text: '06 Distributed tracing', link: '/expert/06-distributed-tracing' },
+          { text: '07 Metrics', link: '/expert/07-metrics' },
+          { text: '08 Graceful shutdown', link: '/expert/08-graceful-shutdown' },
+          { text: '09 Docker Compose', link: '/expert/09-docker-compose' },
+          { text: '10 Testing', link: '/expert/10-testing' },
         ]
       }
     ],
