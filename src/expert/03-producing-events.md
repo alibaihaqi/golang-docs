@@ -140,7 +140,7 @@ func produceOrderWithRetry(ctx context.Context, w *kafka.Writer, event OrderEven
         select {
         case <-ctx.Done():
             return ctx.Err()
-        case <-time.After(time.Duration(100*(i+1)) * time.Millisecond):
+        case <-time.After(min(100*time.Millisecond<<i, 5*time.Second)):
         }
     }
 
@@ -151,7 +151,7 @@ func produceOrderWithRetry(ctx context.Context, w *kafka.Writer, event OrderEven
 This pattern:
 
 - Classifies errors by type — `MessageTooLargeError` will never succeed on retry
-- Uses exponential backoff: 100ms, 200ms, 300ms
+- Uses exponential backoff: 100ms, 200ms, 400ms
 - Respects context cancellation so the retry loop stops on shutdown
 - Logs each attempt with structured fields for observability
 
@@ -165,7 +165,6 @@ package main
 import (
     "context"
     "encoding/json"
-    "errors"
     "fmt"
     "log/slog"
     "os"
@@ -235,43 +234,6 @@ func produceOrder(ctx context.Context, w *kafka.Writer, event OrderEvent) error 
     }
 
     return w.WriteMessages(ctx, msg)
-}
-
-func produceOrderWithRetry(ctx context.Context, w *kafka.Writer, event OrderEvent) error {
-    const maxRetries = 3
-    var lastErr error
-
-    for i := range maxRetries {
-        err := produceOrder(ctx, w, event)
-        if err == nil {
-            return nil
-        }
-
-        if errors.Is(err, kafka.MessageTooLargeError) ||
-            errors.Is(err, kafka.UnsupportedCompressionCodec) ||
-            errors.Is(err, kafka.UnknownTopicOrPartition) {
-            slog.Error("permanent error producing event, skipping",
-                "event_id", event.ID,
-                "error", err,
-            )
-            return err
-        }
-
-        lastErr = err
-        slog.Warn("transient error producing event, retrying",
-            "event_id", event.ID,
-            "attempt", i+1,
-            "error", err,
-        )
-
-        select {
-        case <-ctx.Done():
-            return ctx.Err()
-        case <-time.After(time.Duration(100*(i+1)) * time.Millisecond):
-        }
-    }
-
-    return fmt.Errorf("produce after %d retries: %w", maxRetries, lastErr)
 }
 
 func ensureTopic(ctx context.Context, addr kafka.Addr, topic string, partitions int) {
