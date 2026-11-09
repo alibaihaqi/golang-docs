@@ -3,6 +3,11 @@
 All notable changes to the Golang learning-docs site. Newest first.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-09 — chore: bump Node 26.4.0 -> 26.12.1
+
+### Changed
+- `.node-version` (and any hardcoded CI `node-version`) bumped 26.4.0 -> 26.12.1 for upstream Node security fixes.
+
 ## 2026-08-08 — fix: footer copyright year
 
 ### Fixed
